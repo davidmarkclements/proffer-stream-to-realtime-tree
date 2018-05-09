@@ -1,0 +1,16 @@
+{
+  "name": "proffer-stream-to-realtime-tree",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "David Mark Clements <david.clements@nearform.com>",
+  "license": "UNKNOWN",
+  "dependencies": {
+    "pump": "^3.0.0",
+    "through2": "^2.0.3"
+  }
+}
