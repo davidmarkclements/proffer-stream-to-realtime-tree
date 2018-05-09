@@ -5,23 +5,22 @@ const through = require('through2')
 
 module.exports = profferStreamToRealtimeTree
 
-function profferStreamToRealtimeTree (stream, { trees = {}, mapFrames = () => {} } = {}) {
+function profferStreamToRealtimeTree (stream, { trees = {}, mapFrames = (f) => f } = {}) {
   const merged = trees.merged || {
     name: 'all stacks',
     value: 0,
     top: 0,
-    children: []
+    children: [{}]
   }
   const unmerged = trees.unmerged || {
     name: 'all stacks',
     value: 0,
     top: 0,
-    children: []
+    children: [{}]
   }
 
   const treeify = through.obj(({stack}, _, cb) => {
     processStack(stack)
-    console.log(unmerged)
     if (stack && stack.length) {
       promise.fresh = true
     }
